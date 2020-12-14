@@ -16,7 +16,6 @@ export default class ImageGallery extends Component {
   };
 
   render() {
-    console.log(this.props.images);
     const { images } = this.props;
     return (
       <ul className="ImageGallery">
