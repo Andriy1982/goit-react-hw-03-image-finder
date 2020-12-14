@@ -5,16 +5,9 @@ import './Modal.css';
 const modalRoot = document.querySelector('#modal-root');
 
 export default class Modal extends Component {
-
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
-
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-  //   if (prevState.name !== this.state.name) {
-  //     this.handler();
-  //   }
-  // }
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown);
@@ -28,19 +21,9 @@ export default class Modal extends Component {
 
   handleBackdropClick = e => {
     if (e.currentTarget === e.target) {
-      console.log('aaaaa');
       this.props.onClose();
     }
-
-    // this.props.onClose();
   };
-  //   // Prototype methods, Bind in Constructor (ES2015)
-  //   handleEvent() {}
-
-  //   // Class Properties (Stage 3 Proposal)
-  //   handler = () => {
-  //     this.setState();
-  //   };
 
   render() {
     return createPortal(
